@@ -1,18 +1,28 @@
 import java.util.ArrayList;
 
-public class Pedido extends Produto{
+public class Pedido {
 
-    private Double total = null;
-    ArrayList<Produto> listaProdutos = new ArrayList<>();
+    private Double total = 0.0;
+    private ArrayList<Produto> produtos = new ArrayList<>();
 
-
-    @Override
-    public String produto() {
-    return null;
+    public void adicionarProduto(Produto produto){
+        this.produtos.add(produto);
     }
 
-    @Override
-    public Double valor() {
-        return null;
+    public Double calcularTotal(){
+        produtos.stream().forEach((item)->{
+            total += item.getValor();
+        });
+        return this.total;
     }
+
+    public void exibirProdutos(){
+        produtos.stream().forEach((item)->{
+            System.out.println(item.getProduto());
+        });
+    }
+
+
+
+
 }
