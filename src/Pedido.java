@@ -17,8 +17,12 @@ public class Pedido {
     }
 
     public void exibirProdutos(){
+
+        final int[] i = {1};
+
         produtos.stream().forEach((item)->{
-            System.out.println(item.getProduto());
+            System.out.println("["+(i[0])+"]"+item.getProduto());
+            i[0]++;
         });
     }
 
