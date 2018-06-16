@@ -41,4 +41,8 @@ public class Pessoa {
         return this.nome;
     }
 
+    public String setNome(String novoNome){
+        return this.nome = novoNome;
+    }
+
 }
